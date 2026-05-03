@@ -2,6 +2,8 @@
 
 A real-time collaborative location sharing application that enables authenticated users to view and broadcast their live locations on an interactive map. Users can see other connected users' locations in real-time and receive instant updates when locations change or users disconnect.
 
+This project is part of my [ChaiCode Web Dev Cohort 2026 Archive](https://github.com/sameerbhagtani/web-dev-cohort-2026). Checkout my entire journey there!
+
 ## Overview
 
 Live Location Sharing is a full-stack web application that demonstrates event-driven architecture using Apache Kafka as the message broker. The system decouples location producers (clients) from consumers (UI updates and persistence layer), enabling horizontal scaling and reliable event processing. Users authenticate via a custom OAuth 2.0 and OpenID Connect server, and only authenticated users can appear on the shared map with their names displayed on location markers.

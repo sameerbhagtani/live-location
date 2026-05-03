@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+#auth-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#user-info {
+    display: none;
+    font-size: 0.9rem;
+}
+
+#user-info.logged-in {
+    display: block;
+}
+
+#login-btn {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+#login-btn.show {
+    display: inline-block;
+}
+
+#logout-btn {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+#logout-btn.show {
+    display: inline-block;
+}
+
+#map {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+}
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem;
+    }
+
+    #header h1 {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    #auth-section {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    #login-btn,
+    #logout-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    #user-info {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #header {
+        padding: 0.5rem;
+    }
+
+    #header h1 {
+        font-size: 1rem;
+    }
+
+    #auth-section {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    #login-btn,
+    #logout-btn {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    #user-info {
+        width: 100%;
+    }
+}

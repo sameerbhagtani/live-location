@@ -7,12 +7,14 @@ async function init() {
     await kafkaConsumer.connect();
     await kafkaConsumer.subscribe({
         topics: ["location-updates"],
-        fromBeginning: true,
     });
     kafkaConsumer.run({
         eachMessage: async ({ topic, parition, message, heartbeat }) => {
-            const data = message.value.toString();
-            console.log("INSERT INTO DB LOCATION", data);
+            const data = JSON.parse(message.value.toString());
+            const timestamp = new Date().toISOString();
+            console.log(
+                `[${timestamp}] INSERT INTO DB - User: ${data.userName} (${data.userId}), Location: (${data.latitude}, ${data.longitude})`,
+            );
 
             await heartbeat();
         },

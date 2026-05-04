@@ -12,9 +12,8 @@ Live Location Sharing is a full-stack web application that demonstrates event-dr
 
 ### Prerequisites
 
-- Node.js 18+ (npm 9+)
+- Node.js & npm
 - Docker and Docker Compose
-- PostgreSQL 12+ (for running the auth server separately)
 - Git
 
 ### Installation

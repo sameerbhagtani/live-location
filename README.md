@@ -4,9 +4,13 @@ A real-time collaborative location sharing application that enables authenticate
 
 This project is part of my [ChaiCode Web Dev Cohort 2026 Archive](https://github.com/sameerbhagtani/web-dev-cohort-2026). Checkout my entire journey there!
 
+---
+
 ## Overview
 
 Live Location Sharing is a full-stack web application that demonstrates event-driven architecture using Apache Kafka as the message broker. The system decouples location producers (clients) from consumers (UI updates and persistence layer), enabling horizontal scaling and reliable event processing. Users authenticate via a custom OAuth 2.0 and OpenID Connect server, and only authenticated users can appear on the shared map with their names displayed on location markers.
+
+---
 
 ## Local Setup
 
@@ -60,9 +64,13 @@ node database-processor.js &
 
 The application will run on `http://localhost:5000`.
 
+---
+
 ## Live URL
 
 Deployed at: `https://live-location.sameerbhagtani.dev`
+
+---
 
 ## Tech Stack
 
@@ -86,7 +94,11 @@ Backend:
 
 External Services:
 
-- Custom OIDC/OAuth 2.0 server at https://auth.sameerbhagtani.dev
+- Custom OIDC/OAuth 2.0 server
+    - Hosted at: https://auth.sameerbhagtani.dev
+    - GitHub Repo: https://github.com/sameerbhagtani/sam-auth
+
+---
 
 ## Architecture and Data Flow
 
@@ -128,6 +140,8 @@ The system uses two independent Kafka consumer groups:
 
 This decoupling ensures that UI updates and data persistence do not block each other.
 
+---
+
 ## Authentication
 
 User authentication is delegated to a custom OIDC/OAuth 2.0 server hosted at https://auth.sameerbhagtani.dev. The authorization code flow is used:
@@ -141,6 +155,8 @@ User authentication is delegated to a custom OIDC/OAuth 2.0 server hosted at htt
 7. All future requests validate the token from the cookie before granting access
 
 Only authenticated users can emit location updates or connect via Socket.IO. The id_token is verified on every Socket.IO connection and HTTP request.
+
+---
 
 ## Database Processor
 
@@ -159,6 +175,8 @@ Example console output from database-processor:
 [2026-05-04T15:30:45.123Z] INSERT INTO DB - User: John Doe (123e4567-e89b-12d3-a456-426614174000), Location: (28.6139, 77.2090)
 [2026-05-04T15:30:55.456Z] INSERT INTO DB - User: Jane Smith (456e5678-e89b-12d3-a456-426614174111), Location: (28.5355, 77.3910)
 ```
+
+---
 
 ## Features
 
